@@ -116,11 +116,16 @@ function checkWarranties() {
 
 window.onload = () => {
   const user = localStorage.getItem('dd_user');
+
   if (user) {
     document.getElementById('user-name').innerText = user;
     document.getElementById('login-screen').classList.add('hidden');
     document.getElementById('dashboard-screen').classList.remove('hidden');
     loadCars();
     checkWarranties();
+  } else {
+    document.getElementById('login-screen').classList.remove('hidden');
+    document.getElementById('dashboard-screen').classList.add('hidden');
   }
 };
+
